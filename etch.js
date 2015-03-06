@@ -1,7 +1,12 @@
 var main = function(){
 
-	var height = prompt("What is the height?");
-	var width = prompt("What is the width?");
+	var height = 10;
+	var width = 10;
+
+	$('<button>').text("New Grid").attr('id', 'newGrid').prependTo('#container').click(function(){
+		height = prompt("What is the height?");
+		width = prompt("What is the width?");
+	});
 
 	for(var i = 1; i <= width; i++)
 	{
@@ -9,13 +14,14 @@ var main = function(){
    		for(var j = 1; j <= height; j++)
    		{
    			$('<li>').attr('id', 'grid' + j).appendTo('.row' + i);
-   			//$('<div>').attr('id', 'grid' + j).appendTo('.row' + i);
    		}
 	}
 
 	$('li').hover(function(){
-		$('li').css({'background-color':'blue'});
+		$(this).css({'background-color':'blue'});
 	});
+
+	
 };
 
 $(document).ready(main);

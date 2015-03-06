@@ -6,6 +6,7 @@ h1{
 	margin: auto;
 	width: 500px;
 	height: 500px;
+	text-align: center;
 }
 
 #container ul li {
@@ -14,12 +15,17 @@ h1{
 	height: 20px;
 	width: 20px;
 	border: 1px solid black;
-	margin: 1px 1px 1px 1px;
-
+	margin: 0px 2px;
 }
 
 #container ul{
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
+	margin: 0 0;
+	padding: 0 0;
 }
 
+#newGrid {
+	margin-bottom: 10px;
+	height: 40px;
+	width: 150px;
+	font-size: 20px;
+}
