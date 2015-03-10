@@ -1,11 +1,12 @@
 h1{
 	text-align: center;
+	color: #102152;
+	font-family: tahoma;
 }
 
 #container{
 	margin: auto;
-	width: 500px;
-	height: 500px;
+	width: 960px;
 	text-align: center;
 }
 
@@ -23,9 +24,26 @@ h1{
 	padding: 0 0;
 }
 
-#newGrid {
+button {
 	margin-bottom: 10px;
 	height: 40px;
 	width: 150px;
 	font-size: 20px;
+	color: #102152;
+	background-color: #669999;
+	border-color: #102152;
+	border-radius: 10px;
+	border-width: 3px;
+	cursor: pointer;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-family: tahoma;
+}
+
+body {
+	background-color: #B1B1CA;
+}
+
+li {
+	background-color: white;
 }
