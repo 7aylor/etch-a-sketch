@@ -1,10 +1,10 @@
-const MAX = 36;
+const MAX = 48;
 
 var main = function(){
 
 	drawGrid(16);
 
-	colors();
+	randomColors();
 
 	resizeGrid();
 
@@ -12,13 +12,12 @@ var main = function(){
 
 };
 
-var colors = function(){
-
-	var bgcolorlist = new Array("#FF0000", "#0040FF", "#00FF00", "#F7FE2E", "#190707", "#BF00FF", "#585858", "#FF8000");
-
+var randomColors = function(){
 	$('li').hover(function(){
-		var color = bgcolorlist[Math.floor(Math.random()*bgcolorlist.length)]
-		$(this).css({'background-color':color});
+		var color1 = (Math.floor(Math.random()*256));
+		var color2 = (Math.floor(Math.random()*256));
+		var color3 = (Math.floor(Math.random()*256));
+		$(this).css({'background-color':'rgb(' + color1 + ', ' + color2 + ', ' + color3 + ')'});
 	});
 };
 
@@ -36,20 +35,21 @@ var drawGrid = function(width){
 };
 
 var resizeGrid = function(){
-	$('<button>').text("Resize Grid").attr('id', 'resize').prependTo('#container').click(function(){
+	$('<div>').attr('id', 'header').insertAfter('H1');
+	$('<button>').text("Resize Grid").attr('id', 'resize').prependTo('#header').click(function(){
 		width = prompt("What is the width?");
 		if(width > MAX){
-			alert("Too big! Setting max width to 36");
+			alert("Too big! Setting max width to " + MAX);
 			width = MAX;
 		}
 		eraseGrid();
 		drawGrid(width);
-		colors();
+		randomColors();
 	});
 };
 
 var resetGrid = function(){
-	$('<button>').text("Reset Grid").attr('id', 'reset').prependTo('#container').click(function(){
+	$('<button>').text("Reset Grid").attr('id', 'reset').prependTo('#header').click(function(){
 		$('li').css({'background-color': 'white'})
 	});
 };
@@ -58,5 +58,7 @@ var eraseGrid = function(){
 	$('ul').remove();
 	$('li').remove();
 };
+
+
 
 $(document).ready(main);
